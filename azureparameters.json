@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptions_66154e02e08327005c070001_displayName": {
+            "value": null
+        },
+        "subscriptions_66154e02e08327005c070002_displayName": {
+            "value": null
+        },
+        "users_1_lastName": {
+            "value": null
+        },
+        "vaults_batls_keys_dev_br_name": {
+            "value": null
+        },
+        "service_batls_gateway_dev_br_name": {
+            "value": null
+        },
+        "components_batls_app_insights_dev_br_name": {
+            "value": null
+        },
+        "workspaces_batls_workspace_dev_br_name": {
+            "value": null
+        },
+        "userAssignedIdentities_batls_managed_id_dev_br_name": {
+            "value": null
+        },
+        "webtests_batls_gateway_dev_br_batls_app_insights_dev_br_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___batls_app_insights_dev_br_name": {
+            "value": null
+        },
+        "actiongroups_application_insights_smart_detection_externalid": {
+            "value": null
+        }
+    }
+}
