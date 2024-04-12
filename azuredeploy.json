@@ -7,7 +7,7 @@
         {
             "type": "Microsoft.ApiManagement/service",
             "apiVersion": "2023-05-01-preview",
-            "name": "[parameters('service_batls_gateway_dev_br_name')]",
+            "name": "batls-gateway-dev-br",
             "location": "Brazil Southeast",
             "tags": {
                 "ambiente": "dev"
@@ -23,7 +23,7 @@
                 "hostnameConfigurations": [
                     {
                         "type": "Proxy",
-                        "hostName": "[concat(parameters('service_batls_gateway_dev_br_name'), '.azure-api.net')]",
+                        "hostName": "batls-gateway-dev-br.azure-api.net",
                         "negotiateClientCertificate": false,
                         "defaultSslBinding": true,
                         "certificateSource": "BuiltIn"
@@ -51,9 +51,9 @@
         {
             "type": "Microsoft.ApiManagement/service/apis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite')]",
+            "name": "batls-gateway-dev-br/connectalite",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "ConnectaLite",
@@ -79,9 +79,9 @@
         {
             "type": "Microsoft.ApiManagement/service/apis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra')]",
+            "name": "batls-gateway-dev-br/syscobra",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Syscobra",
@@ -106,9 +106,9 @@
         {
             "type": "Microsoft.ApiManagement/service/apis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello')]",
+            "name": "batls-gateway-dev-br/uello",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "UELLO",
@@ -134,9 +134,9 @@
         {
             "type": "Microsoft.ApiManagement/service/apis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc')]",
+            "name": "batls-gateway-dev-br/vollsc",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "VOLLSC",
@@ -161,9 +161,9 @@
         {
             "type": "Microsoft.ApiManagement/service/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/administrators')]",
+            "name": "batls-gateway-dev-br/administrators",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Administrators",
@@ -174,9 +174,9 @@
         {
             "type": "Microsoft.ApiManagement/service/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/developers')]",
+            "name": "batls-gateway-dev-br/developers",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Developers",
@@ -187,9 +187,9 @@
         {
             "type": "Microsoft.ApiManagement/service/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/guests')]",
+            "name": "batls-gateway-dev-br/guests",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Guests",
@@ -200,9 +200,9 @@
         {
             "type": "Microsoft.ApiManagement/service/loggers",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "loggerType": "applicationInsights",
@@ -211,15 +211,15 @@
                     "instrumentationKey": "{{Logger-Credentials--66155576217d2016d055b359}}"
                 },
                 "isBuffered": true,
-                "resourceId": "[parameters('components_batls_app_insights_dev_br_externalid')]"
+                "resourceId": "/subscriptions/f8d734d2-ba9a-47a4-87c9-f4220a83216e/resourceGroups/BATLS_GLOBAL_BR/providers/microsoft.insights/components/batls-app-insights-dev-br"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/namedValues",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/66155576217d2016d055b358')]",
+            "name": "batls-gateway-dev-br/66155576217d2016d055b358",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Logger-Credentials--66155576217d2016d055b359",
@@ -229,65 +229,65 @@
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/AccountClosedPublisher')]",
+            "name": "batls-gateway-dev-br/AccountClosedPublisher",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/BCC')]",
+            "name": "batls-gateway-dev-br/BCC",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/NewApplicationNotificationMessage')]",
+            "name": "batls-gateway-dev-br/NewApplicationNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/NewIssuePublisherNotificationMessage')]",
+            "name": "batls-gateway-dev-br/NewIssuePublisherNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/PurchasePublisherNotificationMessage')]",
+            "name": "batls-gateway-dev-br/PurchasePublisherNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/QuotaLimitApproachingPublisherNotificationMessage')]",
+            "name": "batls-gateway-dev-br/QuotaLimitApproachingPublisherNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/notifications",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/RequestPublisherNotificationMessage')]",
+            "name": "batls-gateway-dev-br/RequestPublisherNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/policy')]",
+            "name": "batls-gateway-dev-br/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - Only the <forward-request> policy element can appear within the <backend> section element.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n-->\r\n<policies>\r\n  <inbound />\r\n  <backend>\r\n    <forward-request />\r\n  </backend>\r\n  <outbound />\r\n</policies>",
@@ -297,9 +297,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalconfigs",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/default')]",
+            "name": "batls-gateway-dev-br/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "enableBasicAuth": true,
@@ -328,9 +328,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalRevisions",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/20240410013254')]",
+            "name": "batls-gateway-dev-br/20240410013254",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "isCurrent": false
@@ -339,9 +339,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalRevisions",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/20240410013445')]",
+            "name": "batls-gateway-dev-br/20240410013445",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "isCurrent": true
@@ -350,9 +350,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalsettings",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/delegation')]",
+            "name": "batls-gateway-dev-br/delegation",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subscriptions": {
@@ -366,9 +366,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalsettings",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/signin')]",
+            "name": "batls-gateway-dev-br/signin",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "enabled": false
@@ -377,9 +377,9 @@
         {
             "type": "Microsoft.ApiManagement/service/portalsettings",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/signup')]",
+            "name": "batls-gateway-dev-br/signup",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "enabled": true,
@@ -392,9 +392,9 @@
         {
             "type": "Microsoft.ApiManagement/service/products",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter')]",
+            "name": "batls-gateway-dev-br/starter",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Starter",
@@ -408,9 +408,9 @@
         {
             "type": "Microsoft.ApiManagement/service/products",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited')]",
+            "name": "batls-gateway-dev-br/unlimited",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Unlimited",
@@ -424,9 +424,9 @@
         {
             "type": "Microsoft.ApiManagement/service/properties",
             "apiVersion": "2019-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/66155576217d2016d055b358')]",
+            "name": "batls-gateway-dev-br/66155576217d2016d055b358",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Logger-Credentials--66155576217d2016d055b359",
@@ -437,12 +437,12 @@
         {
             "type": "Microsoft.ApiManagement/service/subscriptions",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/master')]",
+            "name": "batls-gateway-dev-br/master",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
-                "scope": "[concat(resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name')), '/')]",
+                "scope": "[concat(resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br'), '/')]",
                 "displayName": "Built-in all-access subscription",
                 "state": "active",
                 "allowTracing": false
@@ -451,9 +451,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/AccountClosedDeveloper')]",
+            "name": "batls-gateway-dev-br/AccountClosedDeveloper",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Thank you for using the $OrganizationName API!",
@@ -483,9 +483,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/ApplicationApprovedNotificationMessage')]",
+            "name": "batls-gateway-dev-br/ApplicationApprovedNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your application $AppName is published in the application gallery",
@@ -523,9 +523,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/ConfirmSignUpIdentityDefault')]",
+            "name": "batls-gateway-dev-br/ConfirmSignUpIdentityDefault",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Please confirm your new $OrganizationName API account",
@@ -567,9 +567,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/EmailChangeIdentityDefault')]",
+            "name": "batls-gateway-dev-br/EmailChangeIdentityDefault",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Please confirm the new email associated with your $OrganizationName API account",
@@ -611,9 +611,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/InviteUserNotificationMessage')]",
+            "name": "batls-gateway-dev-br/InviteUserNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "You are invited to join the $OrganizationName developer network",
@@ -651,9 +651,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/NewCommentNotificationMessage')]",
+            "name": "batls-gateway-dev-br/NewCommentNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "$IssueName issue has a new comment",
@@ -703,9 +703,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/NewDeveloperNotificationMessage')]",
+            "name": "batls-gateway-dev-br/NewDeveloperNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Welcome to the $OrganizationName API!",
@@ -747,9 +747,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/NewIssueNotificationMessage')]",
+            "name": "batls-gateway-dev-br/NewIssueNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your request $IssueName was received",
@@ -787,9 +787,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/PasswordResetByAdminNotificationMessage')]",
+            "name": "batls-gateway-dev-br/PasswordResetByAdminNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your password was reset",
@@ -823,9 +823,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/PasswordResetIdentityDefault')]",
+            "name": "batls-gateway-dev-br/PasswordResetIdentityDefault",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your password change request",
@@ -867,9 +867,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/PurchaseDeveloperNotificationMessage')]",
+            "name": "batls-gateway-dev-br/PurchaseDeveloperNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your subscription to the $ProdName",
@@ -915,9 +915,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/QuotaLimitApproachingDeveloperNotificationMessage')]",
+            "name": "batls-gateway-dev-br/QuotaLimitApproachingDeveloperNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "You are approaching an API quota limit",
@@ -959,9 +959,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/RejectDeveloperNotificationMessage')]",
+            "name": "batls-gateway-dev-br/RejectDeveloperNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your subscription request for the $ProdName",
@@ -999,9 +999,9 @@
         {
             "type": "Microsoft.ApiManagement/service/templates",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/RequestDeveloperNotificationMessage')]",
+            "name": "batls-gateway-dev-br/RequestDeveloperNotificationMessage",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "subject": "Your subscription request for the $ProdName",
@@ -1039,9 +1039,9 @@
         {
             "type": "Microsoft.ApiManagement/service/users",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/1')]",
+            "name": "batls-gateway-dev-br/1",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "firstName": "Administrator",
@@ -1053,77 +1053,16 @@
                         "id": "victor@livingnet.com.br"
                     }
                 ],
-                "lastName": "[parameters('users_1_lastName')]"
+                "lastName": null
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc/api')]",
+            "name": "batls-gateway-dev-br/connectalite/conta",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'vollsc')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "api",
-                "method": "GET",
-                "urlTemplate": "/api",
-                "templateParameters": [],
-                "description": "api",
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/consulta-titulo')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "Consulta Titulo",
-                "method": "GET",
-                "urlTemplate": "/consultarTitulos?tipoNegociacao=CONTRATO,ACORDO",
-                "templateParameters": [],
-                "description": "Consulta Titulo",
-                "request": {
-                    "queryParameters": [
-                        {
-                            "name": "cpfCnpj",
-                            "description": "CPF ou CNPJ",
-                            "type": "string",
-                            "required": true,
-                            "values": []
-                        }
-                    ],
-                    "headers": [],
-                    "representations": []
-                },
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/conta')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Conta",
@@ -1162,47 +1101,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/emitir-boletos')]",
+            "name": "batls-gateway-dev-br/connectalite/finaliza-a-ordem",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "Emitir Boletos",
-                "method": "POST",
-                "urlTemplate": "/emitirBoletos?metodo=teste",
-                "templateParameters": [],
-                "description": "Api para emissão de boletos",
-                "request": {
-                    "queryParameters": [
-                        {
-                            "name": "cpfCnpj",
-                            "description": "CPF ou CNPJ",
-                            "type": "string",
-                            "required": true,
-                            "values": []
-                        }
-                    ],
-                    "headers": [],
-                    "representations": []
-                },
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/finaliza-a-ordem')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Finaliza a Ordem",
@@ -1223,10 +1125,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/limpa-carrinho')]",
+            "name": "batls-gateway-dev-br/connectalite/limpa-carrinho",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Limpa o carrinho",
@@ -1247,10 +1149,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/lista-parcelas')]",
+            "name": "batls-gateway-dev-br/connectalite/lista-parcelas",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Lista parcelas de pagamento",
@@ -1295,10 +1197,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/log')]",
+            "name": "batls-gateway-dev-br/connectalite/log",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "Log",
@@ -1319,10 +1221,206 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/order')]",
+            "name": "batls-gateway-dev-br/connectalite/pedidos-agendados",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "Pedidos agendados",
+                "method": "GET",
+                "urlTemplate": "/order_history.php",
+                "templateParameters": [],
+                "description": "Pedidos agendados",
+                "request": {
+                    "queryParameters": [
+                        {
+                            "name": "_param",
+                            "description": "Código SAP",
+                            "type": "string",
+                            "required": true,
+                            "values": []
+                        }
+                    ],
+                    "headers": [],
+                    "representations": []
+                },
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/connectalite/produtos-varejo",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "Todos os produtos por varejo",
+                "method": "GET",
+                "urlTemplate": "/all-brands-itens.php",
+                "templateParameters": [],
+                "description": "Todos os produtos por varejo",
+                "request": {
+                    "queryParameters": [
+                        {
+                            "name": "_param",
+                            "description": "Código SAP",
+                            "type": "string",
+                            "required": true,
+                            "values": []
+                        }
+                    ],
+                    "headers": [],
+                    "representations": []
+                },
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/connectalite/sms-confirma-token",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "SMS Confirma Token",
+                "method": "POST",
+                "urlTemplate": "/confirm-token-phone.php",
+                "templateParameters": [],
+                "description": "SMS Confirma Token",
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/connectalite/sms-envia-token",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "SMS Envia Token",
+                "method": "POST",
+                "urlTemplate": "/update-phone.php",
+                "templateParameters": [],
+                "description": "SMS Envia Token",
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/syscobra/consulta-titulo",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "Consulta Titulo",
+                "method": "GET",
+                "urlTemplate": "/consultarTitulos?tipoNegociacao=CONTRATO,ACORDO",
+                "templateParameters": [],
+                "description": "Consulta Titulo",
+                "request": {
+                    "queryParameters": [
+                        {
+                            "name": "cpfCnpj",
+                            "description": "CPF ou CNPJ",
+                            "type": "string",
+                            "required": true,
+                            "values": []
+                        }
+                    ],
+                    "headers": [],
+                    "representations": []
+                },
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/syscobra/emitir-boletos",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
+            ],
+            "properties": {
+                "displayName": "Emitir Boletos",
+                "method": "POST",
+                "urlTemplate": "/emitirBoletos?metodo=teste",
+                "templateParameters": [],
+                "description": "Api para emissão de boletos",
+                "request": {
+                    "queryParameters": [
+                        {
+                            "name": "cpfCnpj",
+                            "description": "CPF ou CNPJ",
+                            "type": "string",
+                            "required": true,
+                            "values": []
+                        }
+                    ],
+                    "headers": [],
+                    "representations": []
+                },
+                "responses": [
+                    {
+                        "statusCode": 200,
+                        "description": "null",
+                        "representations": [],
+                        "headers": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/apis/operations",
+            "apiVersion": "2023-05-01-preview",
+            "name": "batls-gateway-dev-br/uello/order",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "displayName": "order",
@@ -1369,115 +1467,17 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/pedidos-agendados')]",
+            "name": "batls-gateway-dev-br/vollsc/api",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'vollsc')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
-                "displayName": "Pedidos agendados",
+                "displayName": "api",
                 "method": "GET",
-                "urlTemplate": "/order_history.php",
+                "urlTemplate": "/api",
                 "templateParameters": [],
-                "description": "Pedidos agendados",
-                "request": {
-                    "queryParameters": [
-                        {
-                            "name": "_param",
-                            "description": "Código SAP",
-                            "type": "string",
-                            "required": true,
-                            "values": []
-                        }
-                    ],
-                    "headers": [],
-                    "representations": []
-                },
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/produtos-varejo')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "Todos os produtos por varejo",
-                "method": "GET",
-                "urlTemplate": "/all-brands-itens.php",
-                "templateParameters": [],
-                "description": "Todos os produtos por varejo",
-                "request": {
-                    "queryParameters": [
-                        {
-                            "name": "_param",
-                            "description": "Código SAP",
-                            "type": "string",
-                            "required": true,
-                            "values": []
-                        }
-                    ],
-                    "headers": [],
-                    "representations": []
-                },
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/sms-confirma-token')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "SMS Confirma Token",
-                "method": "POST",
-                "urlTemplate": "/confirm-token-phone.php",
-                "templateParameters": [],
-                "description": "SMS Confirma Token",
-                "responses": [
-                    {
-                        "statusCode": 200,
-                        "description": "null",
-                        "representations": [],
-                        "headers": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.ApiManagement/service/apis/operations",
-            "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/sms-envia-token')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
-            ],
-            "properties": {
-                "displayName": "SMS Envia Token",
-                "method": "POST",
-                "urlTemplate": "/update-phone.php",
-                "templateParameters": [],
-                "description": "SMS Envia Token",
+                "description": "api",
                 "responses": [
                     {
                         "statusCode": 200,
@@ -1491,10 +1491,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/schemas",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/6615e8a5217d2016d055b35d')]",
+            "name": "batls-gateway-dev-br/connectalite/6615e8a5217d2016d055b35d",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "contentType": "application/vnd.oai.openapi.components+json",
@@ -1504,10 +1504,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/schemas",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/6615e9a1217d2016d055b364')]",
+            "name": "batls-gateway-dev-br/syscobra/6615e9a1217d2016d055b364",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "contentType": "application/vnd.oai.openapi.components+json",
@@ -1517,10 +1517,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/schemas",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/6615ea0a217d2016d055b36a')]",
+            "name": "batls-gateway-dev-br/uello/6615ea0a217d2016d055b36a",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "contentType": "application/vnd.oai.openapi.components+json",
@@ -1530,10 +1530,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/default')]",
+            "name": "batls-gateway-dev-br/connectalite/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1542,10 +1542,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/default')]",
+            "name": "batls-gateway-dev-br/syscobra/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1554,10 +1554,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/default')]",
+            "name": "batls-gateway-dev-br/uello/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1566,10 +1566,10 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc/default')]",
+            "name": "batls-gateway-dev-br/vollsc/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'vollsc')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'vollsc')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1578,16 +1578,16 @@
         {
             "type": "Microsoft.ApiManagement/service/diagnostics",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/applicationinsights')]",
+            "name": "batls-gateway-dev-br/applicationinsights",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]"
             ],
             "properties": {
                 "alwaysLog": "allErrors",
                 "httpCorrelationProtocol": "Legacy",
                 "logClientIp": true,
-                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]",
+                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]",
                 "sampling": {
                     "samplingType": "fixed",
                     "percentage": 100
@@ -1621,91 +1621,91 @@
         {
             "type": "Microsoft.ApiManagement/service/diagnostics/loggers",
             "apiVersion": "2018-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/applicationinsights/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/applicationinsights/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/diagnostics', parameters('service_batls_gateway_dev_br_name'), 'applicationinsights')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/diagnostics', 'batls-gateway-dev-br', 'applicationinsights')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/groups/users",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/administrators/1')]",
+            "name": "batls-gateway-dev-br/administrators/1",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'administrators')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'administrators')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/groups/users",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/developers/1')]",
+            "name": "batls-gateway-dev-br/developers/1",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'developers')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'developers')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/administrators')]",
+            "name": "batls-gateway-dev-br/starter/administrators",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/administrators')]",
+            "name": "batls-gateway-dev-br/starter/developers",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/developers')]",
+            "name": "batls-gateway-dev-br/starter/guests",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/developers')]",
+            "name": "batls-gateway-dev-br/unlimited/administrators",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/guests')]",
+            "name": "batls-gateway-dev-br/unlimited/developers",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groups",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/guests')]",
+            "name": "batls-gateway-dev-br/unlimited/guests",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/products/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/policy')]",
+            "name": "batls-gateway-dev-br/starter/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n            IMPORTANT:\r\n            - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n            - Only the <forward-request> policy element can appear within the <backend> section element.\r\n            - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n            - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n            - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.\r\n            - To remove a policy, delete the corresponding policy statement from the policy document.\r\n            - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n            - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n            - Policies are applied in the order of their appearance, from the top down.\r\n        -->\r\n<policies>\r\n  <inbound>\r\n    <rate-limit calls=\"5\" renewal-period=\"60\" />\r\n    <quota calls=\"100\" renewal-period=\"604800\" />\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n</policies>",
@@ -1715,10 +1715,10 @@
         {
             "type": "Microsoft.ApiManagement/service/products/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/default')]",
+            "name": "batls-gateway-dev-br/starter/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1727,10 +1727,10 @@
         {
             "type": "Microsoft.ApiManagement/service/products/wikis",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/default')]",
+            "name": "batls-gateway-dev-br/unlimited/default",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "documents": []
@@ -1739,18 +1739,18 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/applicationinsights')]",
+            "name": "batls-gateway-dev-br/connectalite/applicationinsights",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]"
             ],
             "properties": {
                 "alwaysLog": "allErrors",
                 "httpCorrelationProtocol": "Legacy",
                 "verbosity": "information",
                 "logClientIp": true,
-                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]",
+                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]",
                 "sampling": {
                     "samplingType": "fixed",
                     "percentage": 100
@@ -1788,18 +1788,18 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/applicationinsights')]",
+            "name": "batls-gateway-dev-br/syscobra/applicationinsights",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]"
             ],
             "properties": {
                 "alwaysLog": "allErrors",
                 "httpCorrelationProtocol": "Legacy",
                 "verbosity": "information",
                 "logClientIp": true,
-                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]",
+                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]",
                 "sampling": {
                     "samplingType": "fixed",
                     "percentage": 100
@@ -1837,18 +1837,18 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/applicationinsights')]",
+            "name": "batls-gateway-dev-br/uello/applicationinsights",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]"
             ],
             "properties": {
                 "alwaysLog": "allErrors",
                 "httpCorrelationProtocol": "Legacy",
                 "verbosity": "information",
                 "logClientIp": true,
-                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]",
+                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]",
                 "sampling": {
                     "samplingType": "fixed",
                     "percentage": 100
@@ -1886,18 +1886,18 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc/applicationinsights')]",
+            "name": "batls-gateway-dev-br/vollsc/applicationinsights",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'vollsc')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]"
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'vollsc')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]"
             ],
             "properties": {
                 "alwaysLog": "allErrors",
                 "httpCorrelationProtocol": "Legacy",
                 "verbosity": "information",
                 "logClientIp": true,
-                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', parameters('service_batls_gateway_dev_br_name'), 'batls-app-insights-dev-br')]",
+                "loggerId": "[resourceId('Microsoft.ApiManagement/service/loggers', 'batls-gateway-dev-br', 'batls-app-insights-dev-br')]",
                 "sampling": {
                     "samplingType": "fixed",
                     "percentage": 100
@@ -1935,51 +1935,51 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics/loggers",
             "apiVersion": "2018-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/applicationinsights/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/connectalite/applicationinsights/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'applicationinsights')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', 'batls-gateway-dev-br', 'connectalite', 'applicationinsights')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics/loggers",
             "apiVersion": "2018-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/applicationinsights/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/syscobra/applicationinsights/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', parameters('service_batls_gateway_dev_br_name'), 'syscobra', 'applicationinsights')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', 'batls-gateway-dev-br', 'syscobra', 'applicationinsights')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics/loggers",
             "apiVersion": "2018-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/applicationinsights/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/uello/applicationinsights/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', parameters('service_batls_gateway_dev_br_name'), 'uello', 'applicationinsights')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', 'batls-gateway-dev-br', 'uello', 'applicationinsights')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/apis/diagnostics/loggers",
             "apiVersion": "2018-01-01",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc/applicationinsights/batls-app-insights-dev-br')]",
+            "name": "batls-gateway-dev-br/vollsc/applicationinsights/batls-app-insights-dev-br",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', parameters('service_batls_gateway_dev_br_name'), 'vollsc', 'applicationinsights')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'vollsc')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/diagnostics', 'batls-gateway-dev-br', 'vollsc', 'applicationinsights')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'vollsc')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ]
         },
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/conta/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/conta/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'conta')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'conta')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -1989,11 +1989,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/finaliza-a-ordem/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/finaliza-a-ordem/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'finaliza-a-ordem')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'finaliza-a-ordem')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-body>@{\r\n            JObject varBody = context.Request.Body.As&lt;JObject&gt;(preserveContent:true);\r\n            return $\"_sap={varBody[\"_sap\"]}&amp;_payment={varBody[\"_payment\"]}&amp;_uf={varBody[\"_uf\"]}&amp;_pdv={varBody[\"_pdv\"]}&amp;_cart={varBody[\"_cart\"]}\";\r\n        }</set-body>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2003,11 +2003,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/limpa-carrinho/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/limpa-carrinho/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'limpa-carrinho')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'limpa-carrinho')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-body>@{\r\n            JObject varBody = context.Request.Body.As&lt;JObject&gt;(preserveContent:true);\r\n            return $\"_sap={varBody[\"_sap\"]}&amp;_action={varBody[\"_action\"]}\";\r\n        }</set-body>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2017,11 +2017,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/lista-parcelas/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/lista-parcelas/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'lista-parcelas')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'lista-parcelas')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2031,11 +2031,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/log/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/log/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'log')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'log')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-body>@{\r\n            JObject varBody = context.Request.Body.As&lt;JObject&gt;(preserveContent:true);\r\n            return $\"_type={varBody[\"_type\"]}&amp;_user={varBody[\"_user\"]}&amp;_service={varBody[\"_service\"]}\";\r\n        }</set-body>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2045,11 +2045,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/pedidos-agendados/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/pedidos-agendados/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'pedidos-agendados')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'pedidos-agendados')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2059,11 +2059,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/produtos-varejo/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/produtos-varejo/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'produtos-varejo')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'produtos-varejo')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2073,11 +2073,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/sms-confirma-token/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/sms-confirma-token/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'sms-confirma-token')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'sms-confirma-token')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-body>@{\r\n            JObject varBody = context.Request.Body.As&lt;JObject&gt;(preserveContent:true);\r\n            return $\"_id={varBody[\"_id\"]}&amp;_token={varBody[\"_token\"]}\";\r\n        }</set-body>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2087,11 +2087,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/connectalite/sms-envia-token/policy')]",
+            "name": "batls-gateway-dev-br/connectalite/sms-envia-token/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'connectalite', 'sms-envia-token')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'connectalite')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'connectalite', 'sms-envia-token')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'connectalite')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <set-header name=\"Content-Type\" exists-action=\"override\">\r\n      <value>application/x-www-form-urlencoded</value>\r\n    </set-header>\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-ConectaLiteAPI/61e30b5605bd4e0cbcfd5537b1cf4dd4</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-body>@{\r\n            JObject varBody = context.Request.Body.As&lt;JObject&gt;(preserveContent:true);\r\n            return $\"_param={varBody[\"_param\"]}&amp;_phone={varBody[\"_phone\"]}\";\r\n        }</set-body>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2101,11 +2101,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/consulta-titulo/policy')]",
+            "name": "batls-gateway-dev-br/syscobra/consulta-titulo/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'syscobra', 'consulta-titulo')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'syscobra', 'consulta-titulo')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-SyscobraAPI/80aa1480210c40a085323a0afcf330e8</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-header name=\"Content-Type\" exists-action=\"append\">\r\n      <value>application/json</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2115,11 +2115,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/syscobra/emitir-boletos/policy')]",
+            "name": "batls-gateway-dev-br/syscobra/emitir-boletos/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'syscobra', 'emitir-boletos')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'syscobra')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'syscobra', 'emitir-boletos')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'syscobra')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-SyscobraAPI/80aa1480210c40a085323a0afcf330e8</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-header name=\"Content-Type\" exists-action=\"append\">\r\n      <value>application/json</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2129,11 +2129,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/uello/order/policy')]",
+            "name": "batls-gateway-dev-br/uello/order/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'uello', 'order')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'uello')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'uello', 'order')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'uello')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-UelloAPI/268d13f97a4243cc8ae0c292dfd5361d</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"X-API-KEY\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-header name=\"Content-Type\" exists-action=\"append\">\r\n      <value>application/json</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2143,11 +2143,11 @@
         {
             "type": "Microsoft.ApiManagement/service/apis/operations/policies",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/vollsc/api/policy')]",
+            "name": "batls-gateway-dev-br/vollsc/api/policy",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('service_batls_gateway_dev_br_name'), 'vollsc', 'api')]",
-                "[resourceId('Microsoft.ApiManagement/service/apis', parameters('service_batls_gateway_dev_br_name'), 'vollsc')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]"
+                "[resourceId('Microsoft.ApiManagement/service/apis/operations', 'batls-gateway-dev-br', 'vollsc', 'api')]",
+                "[resourceId('Microsoft.ApiManagement/service/apis', 'batls-gateway-dev-br', 'vollsc')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]"
             ],
             "properties": {
                 "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- Retrieve the secret from Key Vault using a managed identity -->\r\n    <send-request mode=\"new\" response-variable-name=\"secretResponse\" timeout=\"20\" ignore-error=\"false\">\r\n      <set-url>https://batls-keys-dev-br.vault.azure.net/secrets/token-VollscAPI/ade10a181e1649969af8ba42598f19c6</set-url>\r\n      <set-method>GET</set-method>\r\n      <authentication-managed-identity resource=\"https://vault.azure.net\" />\r\n    </send-request>\r\n    <!-- Place the secret into a local variable -->\r\n    <set-variable name=\"secret\" value=\"@{&#xA;            var secret = ((IResponse)context.Variables[&quot;secretResponse&quot;]).Body.As&lt;JObject&gt;();&#xA;            return secret[&quot;value&quot;].ToString();&#xA;        }\" />\r\n    <set-header name=\"Authorization\" exists-action=\"append\">\r\n      <value>@((string)context.Variables[\"secret\"])</value>\r\n    </set-header>\r\n    <set-header name=\"Content-Type\" exists-action=\"append\">\r\n      <value>application/json</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
@@ -2157,113 +2157,113 @@
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/123B4EB6-85A2-43E1-A249-3E50EFCA829E')]",
+            "name": "batls-gateway-dev-br/starter/40A4AFF8-FD61-45B5-B945-42E03AF7486D",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'developers')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'administrators')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'developers')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'administrators')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/3C76CF8A-6141-4213-A65F-9ED46584D6B8')]",
+            "name": "batls-gateway-dev-br/starter/491807C4-AEE4-4EBC-8479-E132CBF91444",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'administrators')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'developers')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'administrators')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'developers')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/40A4AFF8-FD61-45B5-B945-42E03AF7486D')]",
+            "name": "batls-gateway-dev-br/starter/F125D58E-DCD2-4031-A0DA-F0054DAA7D41",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'administrators')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'guests')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'administrators')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'guests')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/491807C4-AEE4-4EBC-8479-E132CBF91444')]",
+            "name": "batls-gateway-dev-br/unlimited/123B4EB6-85A2-43E1-A249-3E50EFCA829E",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'developers')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'developers')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'developers')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'developers')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/unlimited/6DFBD5A2-6368-4FB2-BFE7-AAAEC989B56C')]",
+            "name": "batls-gateway-dev-br/unlimited/3C76CF8A-6141-4213-A65F-9ED46584D6B8",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'guests')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'administrators')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'guests')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'administrators')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/products/groupLinks",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/starter/F125D58E-DCD2-4031-A0DA-F0054DAA7D41')]",
+            "name": "batls-gateway-dev-br/unlimited/6DFBD5A2-6368-4FB2-BFE7-AAAEC989B56C",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'guests')]"
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'guests')]"
             ],
             "properties": {
-                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', parameters('service_batls_gateway_dev_br_name'), 'guests')]"
+                "groupId": "[resourceId('Microsoft.ApiManagement/service/groups', 'batls-gateway-dev-br', 'guests')]"
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/subscriptions",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/66154e02e08327005c070001')]",
+            "name": "batls-gateway-dev-br/66154e02e08327005c070001",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/users', parameters('service_batls_gateway_dev_br_name'), '1')]",
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/users', 'batls-gateway-dev-br', '1')]",
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]"
             ],
             "properties": {
-                "ownerId": "[resourceId('Microsoft.ApiManagement/service/users', parameters('service_batls_gateway_dev_br_name'), '1')]",
-                "scope": "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'starter')]",
+                "ownerId": "[resourceId('Microsoft.ApiManagement/service/users', 'batls-gateway-dev-br', '1')]",
+                "scope": "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'starter')]",
                 "state": "active",
                 "allowTracing": false,
-                "displayName": "[parameters('subscriptions_66154e02e08327005c070001_displayName')]"
+                "displayName": null
             }
         },
         {
             "type": "Microsoft.ApiManagement/service/subscriptions",
             "apiVersion": "2023-05-01-preview",
-            "name": "[concat(parameters('service_batls_gateway_dev_br_name'), '/66154e02e08327005c070002')]",
+            "name": "batls-gateway-dev-br/66154e02e08327005c070002",
             "dependsOn": [
-                "[resourceId('Microsoft.ApiManagement/service', parameters('service_batls_gateway_dev_br_name'))]",
-                "[resourceId('Microsoft.ApiManagement/service/users', parameters('service_batls_gateway_dev_br_name'), '1')]",
-                "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]"
+                "[resourceId('Microsoft.ApiManagement/service', 'batls-gateway-dev-br')]",
+                "[resourceId('Microsoft.ApiManagement/service/users', 'batls-gateway-dev-br', '1')]",
+                "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]"
             ],
             "properties": {
-                "ownerId": "[resourceId('Microsoft.ApiManagement/service/users', parameters('service_batls_gateway_dev_br_name'), '1')]",
-                "scope": "[resourceId('Microsoft.ApiManagement/service/products', parameters('service_batls_gateway_dev_br_name'), 'unlimited')]",
+                "ownerId": "[resourceId('Microsoft.ApiManagement/service/users', 'batls-gateway-dev-br', '1')]",
+                "scope": "[resourceId('Microsoft.ApiManagement/service/products', 'batls-gateway-dev-br', 'unlimited')]",
                 "state": "active",
                 "allowTracing": false,
-                "displayName": "[parameters('subscriptions_66154e02e08327005c070002_displayName')]"
+                "displayName": null
             }
         }
     ]
