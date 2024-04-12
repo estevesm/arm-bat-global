@@ -1,25 +1,7 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "subscriptions_66154e02e08327005c070001_displayName": {
-            "type": "SecureString"
-        },
-        "subscriptions_66154e02e08327005c070002_displayName": {
-            "type": "SecureString"
-        },
-        "users_1_lastName": {
-            "type": "SecureString"
-        },
-        "service_batls_gateway_dev_br_name": {
-            "defaultValue": "batls-gateway-dev-br",
-            "type": "String"
-        },
-        "components_batls_app_insights_dev_br_externalid": {
-            "defaultValue": "/subscriptions/f8d734d2-ba9a-47a4-87c9-f4220a83216e/resourceGroups/BATLS_GLOBAL_BR/providers/microsoft.insights/components/batls-app-insights-dev-br",
-            "type": "String"
-        }
-    },
+    "parameters": {},
     "variables": {},
     "resources": [
         {
