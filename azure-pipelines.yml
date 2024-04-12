@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'BAT-GLOBAL-BR-DEV'
     location: 'Brazil South'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/estevesm/arm-bat-global/main/azuredeploy.json?token=GHSAT0AAAAAACQ3UWPGPV2Q62WD5FPF25VGZQYQQCQ'
+    csmFileLink: 'https://raw.githubusercontent.com/estevesm/arm-bat-global/main/azuredeploy.json?token=GHSAT0AAAAAACQ3UWPGYYNVXASSHQGGK7QEZQYQZ3A'
     deploymentMode: 'Incremental'
     deploymentName: 'ARMDeployPipelines'
 
