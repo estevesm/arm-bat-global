@@ -8,7 +8,7 @@
             "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
             "apiVersion": "2018-11-30",
             "name": "batls-managed-id-dev-br",
-            "location": "Brazil South"
+            "location": "brazilsouth"
         }
     ]
 }
